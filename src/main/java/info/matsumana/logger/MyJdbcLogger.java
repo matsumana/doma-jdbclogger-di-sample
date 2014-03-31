@@ -9,7 +9,7 @@ public class MyJdbcLogger extends UtilLoggingJdbcLogger {
 
     private static final int DEFAULT_LIMIT_SIZE = 3;
 
-    private ThreadLocal sqlLogdList = new ThreadLocal();
+    private ThreadLocal<LinkedList<Sql<?>>> sqlLogdList = new ThreadLocal<>();
 
     @Override
     public void logSql(String callerClassName, String callerMethodName, Sql<?> sql) {
